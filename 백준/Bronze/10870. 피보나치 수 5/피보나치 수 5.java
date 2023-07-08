@@ -10,11 +10,16 @@ public class Main {
     }
 
     public static int calcFibonacci(int n) {
-        if (n == 0) {
-            return 0;
-        } else if (n == 1 || n == 2) {
-            return 1;
+        return calcFibonacciTail(n, 0, 1);
+    }
+
+    private static int calcFibonacciTail(int fn, int fn1, int fn2) {
+        if (fn == 0) {
+            return fn1;
+        } else if (fn == 1) {
+            return fn2;
+        } else {
+            return calcFibonacciTail(fn - 1, fn2, fn1 + fn2);
         }
-        return calcFibonacci(n - 1) + calcFibonacci(n - 2);
     }
 }
