@@ -3,7 +3,7 @@ import java.util.regex.*;
 
 class Solution {
     public int solution(String dartResult) {
-        Pattern p = Pattern.compile("([0-9]*[A-Z][?#*])|[0-9]*[A-Z]");
+        Pattern p = Pattern.compile("([0-9]{1,2}[S|T|D][*|#]{0,1})");
         Matcher m = p.matcher(dartResult);
         
         List<String> list = new ArrayList<>();
@@ -36,8 +36,8 @@ class Solution {
     }
     
     public int calc(String s) {
-        Pattern number = Pattern.compile("[0-9]*");
-        Pattern bonus = Pattern.compile("[A-Z]");
+        Pattern number = Pattern.compile("[0-9]{1,2}");
+        Pattern bonus = Pattern.compile("[S|T|D]");
         
         Matcher nm = number.matcher(s);
         Matcher bm = bonus.matcher(s);
