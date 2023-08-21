@@ -26,7 +26,7 @@ class Solution {
                     };
                 }
             }
-            move(all, checked);
+            pang(all, checked);
 
             for (int i = 0; i < m; i++) {
                 for (int j = 0; j < n; j++) {
@@ -106,7 +106,7 @@ class Solution {
         }
     }
     
-    private void move(String[][] all, boolean[][] checked) {
+    private void pang(String[][] all, boolean[][] checked) {
         for (int i = 0; i < checked.length; i++) {
             for(int j = 0; j < checked[0].length; j++) {
                 if(checked[i][j]) {
@@ -116,18 +116,3 @@ class Solution {
         }
     }
 }
-
-// 000000
-// 000000
-// 000I0I
-// 000000
-// I00000
-// 00I000
-
-
-// IIIIOO
-// IIIOOO 
-// IIIOOI
-// IOOIII
-// OOOIII
-// OOIIII
